@@ -7,15 +7,34 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@storybook/addon-actions": "^7.0.0-beta.62",
+    "@storybook/addon-essentials": "^7.0.0-beta.62",
+    "@storybook/addon-interactions": "^7.0.0-beta.62",
+    "@storybook/addon-links": "^7.0.0-beta.62",
+    "@storybook/blocks": "^7.0.0-beta.62",
+    "@storybook/builder-vite": "^7.0.0-beta.62",
+    "@storybook/cli": "^7.0.0-beta.62",
+    "@storybook/svelte": "^7.0.0-beta.62",
+    "@storybook/svelte-vite": "^7.0.0-beta.62",
+    "@storybook/testing-library": "^0.0.14-next.1",
     "@sveltejs/vite-plugin-svelte": "^2.0.2",
     "@tsconfig/svelte": "^3.0.0",
+    "babel-loader": "^8.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.0.0-beta.62",
     "svelte": "^3.55.1",
     "svelte-check": "^2.10.3",
+    "svelte-loader": "^3.1.7",
     "tslib": "^2.5.0",
     "typescript": "^4.9.3",
     "vite": "^4.1.0"
-  }
+  },
+  "peerDependencies": {}
 }
