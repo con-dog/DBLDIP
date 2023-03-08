@@ -11,7 +11,7 @@
   xmlns="http://www.w3.org/2000/svg"
 >
   <rect y="46" width="375" height="0.33" fill="#CCCCCC" />
-  <rect x="11" width="354" height="36" rx="18" fill="#E8EAED" />
+  <rect x="11" width="354" height="36" rx="18" class={colorMode} />
   <path
     d="M346 15H347C347.552 15 348 15.4477 348 16V23.5C348 24.0523 347.552 24.5 347 24.5H337C336.448 24.5 336 24.0523 336 23.5V16C336 15.4477 336.448 15 337 15H338M342 20V9M342 9L345.5 12.5M342 9L338.5 12.5"
     stroke="#9AA0A6"
@@ -39,7 +39,7 @@
   </defs>
 </svg>
 
-<style>
+<style lang="scss">
   .header {
     position: absolute;
     width: 390px;
@@ -47,8 +47,20 @@
     top: 20px;
     left: 25px;
   }
+  // rect {
+  //   &.lightMode {
+  //     fill: green;
+  //   }
+  // }
   .lightMode {
-    fill: #202124;
+    @at-root {
+      rect {
+        fill: #e8eaed;
+      }
+    }
+    // fill: red;
+
+    // fill: #202124;
     stroke: #9aa0a6;
   }
 </style>
