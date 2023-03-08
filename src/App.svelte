@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Iphone12 from './components/devices/Iphone12/Iphone12.svelte'
+  import Iphone12 from './components/devices/phones/Iphone12/Iphone12.svelte'
 </script>
 
 <main>

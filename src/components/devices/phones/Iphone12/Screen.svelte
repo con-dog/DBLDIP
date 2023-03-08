@@ -16,7 +16,7 @@
   /></svg
 >
 
-<style>
+<style lang="scss">
   .screen {
     position: absolute;
     width: 390px;
@@ -25,7 +25,6 @@
     left: 25px;
   }
   .darkMode {
-    fill: #252a2f;
   }
   .lightMode {
     fill: #f9f9f9;
