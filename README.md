@@ -1,6 +1,23 @@
 # Usage
 
 # Todos
+- Add scroll change display
+- Add global css variables
+- color palette https://coolors.co/palette/2c6e49-4c956c-fefee3-ffc9b9-d68c45
+- Add cli
+- Add npmignore
+- Add keywords/license to package.json
+- Add Github Actions
+- Add Logo
+- Connect to Playwright for multi device headless instances
+- Add more devices
+- Change add devices modal to grid of devices sorted by device type, screen size, company, OS etc
+- Add Dark Mode
+- Add Global toggle device frames, screenshot, video button
+- Add screenshot, video button
+- Synchronise device actions and scroll
+- Add landscape mode to Mobile/Tablet devices
+- Add toggle browsers
 
 # Roadmap
 
