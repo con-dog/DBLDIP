@@ -4,7 +4,7 @@
   import StatusBar from './StatusBar.svelte'
   import ChromeHeader from './ChromeHeader.svelte'
 
-  let colorMode: 'lightMode' | 'darkMode' | 'offMode' = 'darkMode'
+  let colorMode: 'lightMode' | 'darkMode' = 'darkMode'
 </script>
 
 <div>
@@ -15,10 +15,6 @@
 </div>
 
 <style lang="scss">
-  :global(.darkMode) {
-    fill: $test-color;
-    // background-color: pink;
-  }
   div {
     position: relative;
   }

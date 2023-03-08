@@ -1,5 +1,5 @@
 <script lang ts>
-  export let colorMode = 'lightMode'
+  export let colorMode
 </script>
 
 <svg
@@ -17,6 +17,9 @@
 >
 
 <style lang="scss">
+  $fill-color-light-mode: #fff;
+  $fill-color-dark-mode: #36373b;
+
   .screen {
     position: absolute;
     width: 390px;
@@ -24,12 +27,12 @@
     top: 20px;
     left: 25px;
   }
-  .darkMode {
-  }
+
   .lightMode {
-    fill: #f9f9f9;
+    fill: $fill-color-light-mode;
   }
-  .offMode {
-    fill: #000;
+
+  .darkMode {
+    fill: $fill-color-dark-mode;
   }
 </style>

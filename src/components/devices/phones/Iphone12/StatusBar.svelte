@@ -1,5 +1,5 @@
 <script lang ts>
-  export let colorMode = 'lightMode'
+  export let colorMode
 </script>
 
 <svg
@@ -26,7 +26,10 @@
   />
 </svg>
 
-<style>
+<style lang="scss">
+  $fill-color-light-mode: #000;
+  $fill-color-dark-mode: #fff;
+
   .statusBar {
     position: absolute;
     width: 332px;
@@ -34,13 +37,10 @@
     top: 20px;
     left: 65px;
   }
-  .darkMode {
-    fill: #fff;
-  }
   .lightMode {
-    fill: #000;
+    fill: $fill-color-light-mode;
   }
-  .offMode {
-    fill: none;
+  .darkMode {
+    fill: $fill-color-dark-mode;
   }
 </style>

@@ -6,5 +6,5 @@
   <Iphone12 />
 </main>
 
-<style>
+<style lang="scss">
 </style>
