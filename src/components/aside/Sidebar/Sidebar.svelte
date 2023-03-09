@@ -55,6 +55,9 @@
       margin-top: 1rem;
     }
     button {
+      padding: 0;
+      margin: 0;
+      text-align: center;
       width: 5rem;
       height: 5rem;
       background-color: transparent;
@@ -62,6 +65,8 @@
       border: none;
       font-size: 1.75rem;
       cursor: pointer;
+      outline: none;
+
       transition: all 0.1s ease-in-out;
       &:hover {
         transform: scale(1.3);
