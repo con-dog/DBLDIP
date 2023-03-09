@@ -16,6 +16,9 @@
   $offwhite: #f3f3f3;
 
   button {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
     background: $vivid-sky-blue;
     border-radius: 50%;
     border: none;
@@ -30,13 +33,11 @@
     width: 5rem;
     transition: all 0.2s ease-in-out;
     box-shadow: 0 0 0.5rem $vivid-sky-blue;
-  }
-
-  button:hover {
-    transform: scale(1.1);
-  }
-
-  button:active {
-    transform: scale(0.9);
+    &:hover {
+      transform: scale(1.1);
+    }
+    &:active {
+      transform: scale(0.9);
+    }
   }
 </style>
