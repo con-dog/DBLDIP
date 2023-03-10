@@ -223,6 +223,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 0.5rem;
+    background-color: $offwhite;
     &::backdrop {
       background-color: rgba(0, 0, 0, 0.5);
     }
