@@ -41,6 +41,34 @@
             <FrameIphone12 {size} />
           </div>
         </label>
+        <label data-tooltip="390 x 844">
+          <input type="checkbox" />
+          <div>
+            <span>iPhone 12</span>
+            <FrameIphone12 {size} />
+          </div>
+        </label>
+        <label data-tooltip="390 x 844">
+          <input type="checkbox" />
+          <div>
+            <span>iPhone 12</span>
+            <FrameIphone12 {size} />
+          </div>
+        </label>
+        <label data-tooltip="390 x 844">
+          <input type="checkbox" />
+          <div>
+            <span>iPhone 12</span>
+            <FrameIphone12 {size} />
+          </div>
+        </label>
+        <label data-tooltip="390 x 844">
+          <input type="checkbox" />
+          <div>
+            <span>iPhone 12</span>
+            <FrameIphone12 {size} />
+          </div>
+        </label>
       </fieldset>
       <fieldset>
         <legend>
@@ -105,10 +133,6 @@
   $offwhite: #f3f3f3;
   $arrow-size: 10px;
 
-  fieldset {
-    padding: 1rem;
-  }
-
   label {
     position: relative;
     margin: 0;
@@ -124,6 +148,7 @@
       border: $arrow-size solid #000;
       border-color: transparent transparent black transparent;
       display: none;
+      z-index: 1;
     }
     &::before {
       padding: 0.5rem 0;
@@ -137,6 +162,7 @@
       font-size: 1rem;
       text-align: center;
       display: none;
+      z-index: 1;
     }
     &:hover::before,
     &:hover::after {
@@ -188,6 +214,7 @@
   }
 
   dialog {
+    width: 520px;
     position: absolute;
     top: 50%;
     bottom: 50%;
@@ -195,13 +222,19 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 300px;
+    border-radius: 0.5rem;
     &::backdrop {
       background-color: rgba(0, 0, 0, 0.5);
     }
   }
   fieldset {
-    display: flex;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 100%;
+    max-width: calc(5 * (80px + 0.8rem));
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, max-content));
+    justify-content: start;
     gap: 0.8rem;
   }
   .container {
