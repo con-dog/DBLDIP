@@ -1,5 +1,9 @@
+<script lang ts>
+  export let size
+</script>
+
 <svg
-  class="frame"
+  class={size}
   id="uuid-ed6f3de9-9b77-43fb-b0aa-74da78cba85d"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -204,11 +208,17 @@
   </g>
 </svg>
 
-<style>
-  .frame {
-    position: relative;
+<style lang="scss">
+  .base {
+    filter: drop-shadow(0px 10px 20px #969696);
+  }
+  .regular {
+    @extend .base;
     width: 440px;
     height: 884px;
-    filter: drop-shadow(0px 10px 20px #969696);
+  }
+  .thumbnail {
+    @extend .base;
+    height: 30px;
   }
 </style>
