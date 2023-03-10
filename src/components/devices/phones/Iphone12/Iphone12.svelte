@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Frame from './Frame.svelte'
+  import FrameIphone12 from './FrameIphone12.svelte'
   import Screen from './Screen.svelte'
   import StatusBar from './StatusBar.svelte'
   import ChromeHeader from './ChromeHeader.svelte'
@@ -8,10 +8,11 @@
   import HomeIndicator from './HomeIndicator.svelte'
 
   let colorMode: 'lightMode' | 'darkMode' = 'darkMode'
+  let size: 'thumbnail' | 'regular' = 'regular'
 </script>
 
 <div>
-  <Frame />
+  <FrameIphone12 {size} />
   <Screen {colorMode} />
   <StatusBar {colorMode} />
   <ChromeHeader {colorMode} />
