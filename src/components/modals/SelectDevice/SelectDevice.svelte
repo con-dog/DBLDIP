@@ -88,9 +88,9 @@
         >
       </fieldset>
     </div>
-    <div>
-      <button type="reset">Cancel</button>
-      <button type="submit">Submit</button>
+    <div class="form-buttons">
+      <button type="reset" class="cancel">Cancel</button>
+      <button type="submit" class="submit">Submit</button>
     </div>
   </form>
 </dialog>
@@ -209,5 +209,33 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+  }
+
+  .form-buttons {
+    display: flex;
+    gap: 0.25rem;
+    justify-content: center;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.05s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
+    &:active {
+      transform: scale(0.9);
+    }
+    &.cancel {
+      background-color: $rose;
+    }
+    &.submit {
+      background-color: $neon-blue;
+    }
   }
 </style>
