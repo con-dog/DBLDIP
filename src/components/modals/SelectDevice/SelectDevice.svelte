@@ -1,57 +1,67 @@
 <script lang ts>
+  import Fa from 'svelte-fa'
+  import { faAndroid, faApple } from '@fortawesome/free-brands-svg-icons'
+  import {
+    faLaptop,
+    faTabletScreenButton
+  } from '@fortawesome/free-solid-svg-icons'
   import FrameIphone12 from '../../devices/phones/Iphone12/FrameIphone12.svelte'
 
   let size = 'thumbnail'
 </script>
 
 <dialog>
-  <span>1</span>
-  <p>2</p>
   <form method="dialog">
     <h1>Select devices to emulate</h1>
     <div class="container">
-      <label>
-        <input type="checkbox" />
-        <div>
-          <span>iPhone 12</span>
-          <FrameIphone12 {size} />
-        </div>
-      </label>
-      <label>
-        <input type="checkbox" />
-        <div>
-          <span>iPhone 12</span>
-          <FrameIphone12 {size} />
-        </div>
-      </label>
-      <label>
-        <input type="checkbox" />
-        <div>
-          <span>iPhone 12</span>
-          <FrameIphone12 {size} />
-        </div>
-      </label>
-      <label>
-        <input type="checkbox" />
-        <div>
-          <span>iPhone 12</span>
-          <FrameIphone12 {size} />
-        </div>
-      </label>
-      <label>
-        <input type="checkbox" />
-        <div>
-          <span>iPhone 12</span>
-          <FrameIphone12 {size} />
-        </div>
-      </label>
-      <label>
-        <input type="checkbox" />
-        <div>
-          <span>iPhone 12</span>
-          <FrameIphone12 {size} />
-        </div>
-      </label>
+      <fieldset>
+        <legend>
+          <Fa icon={faApple} />
+          Apple smartphones</legend
+        >
+        <label>
+          <input type="checkbox" />
+          <div>
+            <span>iPhone 12</span>
+            <FrameIphone12 {size} />
+          </div>
+        </label>
+        <label>
+          <input type="checkbox" />
+          <div>
+            <span>iPhone 12</span>
+            <FrameIphone12 {size} />
+          </div>
+        </label>
+        <label>
+          <input type="checkbox" />
+          <div>
+            <span>iPhone 12</span>
+            <FrameIphone12 {size} />
+          </div>
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>
+          <Fa icon={faAndroid} />
+          Android smartphones</legend
+        >
+      </fieldset>
+      <fieldset>
+        <legend>
+          <Fa icon={faLaptop} />
+          Laptops</legend
+        >
+      </fieldset>
+      <fieldset>
+        <legend>
+          <Fa icon={faTabletScreenButton} />
+          Tablets</legend
+        >
+      </fieldset>
+      <fieldset>
+        <legend>Watches</legend>
+      </fieldset>
     </div>
     <div>
       <button type="reset">Cancel</button>
@@ -123,6 +133,10 @@
     align-items: center;
     justify-content: center;
     width: 300px;
+  }
+  fieldset {
+    display: flex;
+    gap: 0.8rem;
   }
   .container {
     margin: 2rem 0;
