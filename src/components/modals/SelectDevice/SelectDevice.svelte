@@ -20,21 +20,21 @@
           <Fa icon={faApple} />
           Apple smartphones</legend
         >
-        <label>
+        <label data-tooltip="390 x 844">
           <input type="checkbox" />
           <div>
             <span>iPhone 12</span>
             <FrameIphone12 {size} />
           </div>
         </label>
-        <label>
+        <label data-tooltip="390 x 844">
           <input type="checkbox" />
           <div>
             <span>iPhone 12</span>
             <FrameIphone12 {size} />
           </div>
         </label>
-        <label>
+        <label data-tooltip="390 x 844">
           <input type="checkbox" />
           <div>
             <span>iPhone 12</span>
@@ -47,6 +47,27 @@
           <Fa icon={faAndroid} />
           Android smartphones</legend
         >
+        <label data-tooltip="390 x 844">
+          <input type="checkbox" />
+          <div>
+            <span>iPhone 12</span>
+            <FrameIphone12 {size} />
+          </div>
+        </label>
+        <label data-tooltip="390 x 844">
+          <input type="checkbox" />
+          <div>
+            <span>iPhone 12</span>
+            <FrameIphone12 {size} />
+          </div>
+        </label>
+        <label data-tooltip="390 x 844">
+          <input type="checkbox" />
+          <div>
+            <span>iPhone 12</span>
+            <FrameIphone12 {size} />
+          </div>
+        </label>
       </fieldset>
       <fieldset>
         <legend>
@@ -82,11 +103,47 @@
   $neon-blue: #4361ee;
   $vivid-sky-blue: #4cc9f0;
   $offwhite: #f3f3f3;
+  $arrow-size: 10px;
+
+  fieldset {
+    padding: 1rem;
+  }
 
   label {
+    position: relative;
     margin: 0;
     padding: 0;
+    &::after {
+      content: '';
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      left: calc(50% - $arrow-size);
+      bottom: calc(-3px - $arrow-size);
+      /* the arrow */
+      border: $arrow-size solid #000;
+      border-color: transparent transparent black transparent;
+      display: none;
+    }
+    &::before {
+      padding: 0.5rem 0;
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: calc(-2rem - $arrow-size);
+      width: 100%;
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+      font-size: 1rem;
+      text-align: center;
+      display: none;
+    }
+    &:hover::before,
+    &:hover::after {
+      display: block;
+    }
   }
+
   input[type='checkbox'] {
     margin: 0;
     padding: 0;
@@ -124,7 +181,6 @@
     &:checked {
       + div {
         outline: 3px solid $vivid-sky-blue;
-        color: $rose;
         font-weight: 700;
         border: 1px solid transparent;
       }
@@ -132,11 +188,17 @@
   }
 
   dialog {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 300px;
+    &::backdrop {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
   }
   fieldset {
     display: flex;
