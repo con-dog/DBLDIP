@@ -2,6 +2,7 @@
   import Fa from 'svelte-fa'
   import { faAndroid, faApple } from '@fortawesome/free-brands-svg-icons'
   import {
+    faClock,
     faLaptop,
     faTabletScreenButton
   } from '@fortawesome/free-solid-svg-icons'
@@ -60,7 +61,10 @@
         >
       </fieldset>
       <fieldset>
-        <legend>Watches</legend>
+        <legend>
+          <Fa icon={faClock} />
+          Watches</legend
+        >
       </fieldset>
     </div>
     <div>
