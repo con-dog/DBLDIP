@@ -13,7 +13,9 @@
 
 <dialog>
   <form method="dialog">
-    <h1>Select devices to emulate</h1>
+    <div class="head">
+      <h1>Select devices to emulate</h1>
+    </div>
     <div class="container">
       <fieldset>
         <legend>
@@ -133,6 +135,16 @@
   $offwhite: #f3f3f3;
   $arrow-size: 10px;
 
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
   label {
     position: relative;
     margin: 0;
@@ -228,6 +240,7 @@
       background-color: rgba(0, 0, 0, 0.5);
     }
   }
+
   fieldset {
     margin: 0 auto;
     padding: 1rem;
