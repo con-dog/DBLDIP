@@ -8,10 +8,22 @@
   } from '@fortawesome/free-solid-svg-icons'
   import FrameIphone12 from '../../devices/phones/Iphone12/FrameIphone12.svelte'
 
+  export let showModal
+  let dialog
+
+  $: if (dialog && showModal) {
+    console.log('Here')
+    dialog.showModal()
+  }
+
   let size = 'thumbnail'
 </script>
 
-<dialog>
+<dialog
+  bind:this={dialog}
+  on:close={() => (showModal = false)}
+  on:click|self={() => dialog.close()}
+>
   <form method="dialog">
     <div class="head">
       <h1>Select devices to emulate</h1>
@@ -29,75 +41,12 @@
             <FrameIphone12 {size} />
           </div>
         </label>
-        <label data-tooltip="390 x 844">
-          <input type="checkbox" />
-          <div>
-            <span>iPhone 12</span>
-            <FrameIphone12 {size} />
-          </div>
-        </label>
-        <label data-tooltip="390 x 844">
-          <input type="checkbox" />
-          <div>
-            <span>iPhone 12</span>
-            <FrameIphone12 {size} />
-          </div>
-        </label>
-        <label data-tooltip="390 x 844">
-          <input type="checkbox" />
-          <div>
-            <span>iPhone 12</span>
-            <FrameIphone12 {size} />
-          </div>
-        </label>
-        <label data-tooltip="390 x 844">
-          <input type="checkbox" />
-          <div>
-            <span>iPhone 12</span>
-            <FrameIphone12 {size} />
-          </div>
-        </label>
-        <label data-tooltip="390 x 844">
-          <input type="checkbox" />
-          <div>
-            <span>iPhone 12</span>
-            <FrameIphone12 {size} />
-          </div>
-        </label>
-        <label data-tooltip="390 x 844">
-          <input type="checkbox" />
-          <div>
-            <span>iPhone 12</span>
-            <FrameIphone12 {size} />
-          </div>
-        </label>
       </fieldset>
       <fieldset>
         <legend>
           <Fa icon={faAndroid} />
           Android smartphones</legend
         >
-        <label data-tooltip="390 x 844">
-          <input type="checkbox" />
-          <div>
-            <span>iPhone 12</span>
-            <FrameIphone12 {size} />
-          </div>
-        </label>
-        <label data-tooltip="390 x 844">
-          <input type="checkbox" />
-          <div>
-            <span>iPhone 12</span>
-            <FrameIphone12 {size} />
-          </div>
-        </label>
-        <label data-tooltip="390 x 844">
-          <input type="checkbox" />
-          <div>
-            <span>iPhone 12</span>
-            <FrameIphone12 {size} />
-          </div>
-        </label>
       </fieldset>
       <fieldset>
         <legend>
@@ -119,7 +68,9 @@
       </fieldset>
     </div>
     <div class="form-buttons">
-      <button type="reset" class="cancel">Cancel</button>
+      <button type="reset" class="cancel" on:click={() => dialog.close()}
+        >Cancel</button
+      >
       <button type="submit" class="submit">Submit</button>
     </div>
   </form>
@@ -230,7 +181,6 @@
     position: absolute;
     top: 50%;
     bottom: 50%;
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;

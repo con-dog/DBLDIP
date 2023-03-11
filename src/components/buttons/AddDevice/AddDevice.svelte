@@ -1,9 +1,18 @@
 <script lang ts>
+  import { createEventDispatcher } from 'svelte'
   import Fa from 'svelte-fa'
   import { faPlus } from '@fortawesome/free-solid-svg-icons'
+
+  const dispatch = createEventDispatcher()
+
+  function handleClick() {
+    dispatch('click', {
+      message: 'AddDevice button clicked'
+    })
+  }
 </script>
 
-<button>
+<button on:click={handleClick}>
   <Fa icon={faPlus} />
 </button>
 
