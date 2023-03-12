@@ -6,6 +6,7 @@
     faWindowMinimize,
     faXmark
   } from '@fortawesome/free-solid-svg-icons'
+  import { v4 as uuidv4 } from 'uuid'
   import Sidebar from './components/aside/Sidebar/Sidebar.svelte'
   import AddDevice from './components/buttons/AddDevice/AddDevice.svelte'
   import SelectDevice from './components/modals/SelectDevice/SelectDevice.svelte'
@@ -14,41 +15,60 @@
   let showModal: true | false = false
   let devices: any = []
 
+  let colorMode = 'lightMode'
+
+  const deviceMap = {
+    iPhone12: Iphone12
+  }
+
+  function toggleColorMode() {
+    colorMode = colorMode === 'lightMode' ? 'darkMode' : 'lightMode'
+  }
+
   function handleClick(event) {
     showModal = true
   }
 
   function handleSubmit(event) {
     const formData = new FormData(event.detail.form)
-    const data = {}
     const selected = []
     for (const [key, value] of formData) {
-      data[key] = value
+      const device = {}
+      device['name'] = key
+      device['uuid'] = uuidv4()
       if (value === 'on') {
-        selected.push(key)
+        selected.push(device)
       }
     }
     devices = [...devices, ...selected]
-    console.log(devices)
+  }
+
+  function removeDevice(uuid) {
+    devices = devices.filter((device) => device['uuid'] !== uuid)
   }
 </script>
 
 <main>
   <AddDevice on:click={handleClick} />
-  <Sidebar />
+  <Sidebar {toggleColorMode} {colorMode} />
   <SelectDevice bind:showModal on:submit={handleSubmit} />
   <div class="devices">
     {#each devices as device}
       <div class="device-container">
         <div class="titlebar">
-          <h2>{device}</h2>
+          <h2>{device['name']}</h2>
           <div>
             <button class="minimize-device"> _ </button>
-            <button class="close-device"> X </button>
+            <button
+              class="close-device"
+              on:click={() => removeDevice(device['uuid'])}
+            >
+              X
+            </button>
           </div>
         </div>
         <hr />
-        <Iphone12 />
+        <svelte:component this={deviceMap[device['name']]} {colorMode} />
       </div>
     {/each}
   </div>

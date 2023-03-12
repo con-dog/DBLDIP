@@ -6,11 +6,14 @@
     faCrop,
     faVideo
   } from '@fortawesome/free-solid-svg-icons'
+
+  export let toggleColorMode
+  export let colorMode
 </script>
 
 <aside>
   <img src="/images/logo.png" alt="logo" />
-  <button>
+  <button on:click={toggleColorMode} class={colorMode}>
     <Fa icon={faCircleHalfStroke} />
   </button>
   <button>
@@ -76,7 +79,7 @@
       &:active {
         transform: scale(0.9);
       }
-      &:focus {
+      &.darkMode {
         color: $rose;
       }
     }
