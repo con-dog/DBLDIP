@@ -7,7 +7,7 @@
     top: 118px;
     left: 25px;
     width: 389px;
-    height: 670px;
+    height: 675px;
     border: none;
   }
 </style>
