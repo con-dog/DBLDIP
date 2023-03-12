@@ -12,11 +12,12 @@
 
   export let showModal
 
-  const dispatch = createEventDispatcher()
-
   let dialog
   let form
+  let anySelected = false
   let size = 'thumbnail'
+
+  const dispatch = createEventDispatcher()
 
   $: if (dialog && showModal) {
     dialog.showModal()
@@ -49,7 +50,12 @@
           Apple smartphones</legend
         >
         <label for="iPhone12" data-tooltip="390 x 844">
-          <input type="checkbox" id="iPhone12" name="iPhone12" />
+          <input
+            type="checkbox"
+            id="iPhone12"
+            name="iPhone12"
+            bind:checked={anySelected}
+          />
           <div>
             <span>iPhone 12</span>
             <FrameIphone12 {size} />
@@ -85,7 +91,9 @@
       <button type="reset" class="cancel" on:click={() => dialog.close()}
         >Cancel</button
       >
-      <button type="submit" class="submit">Submit</button>
+      <button type="submit" class="submit" disabled={!anySelected}
+        >Submit</button
+      >
     </div>
   </form>
 </dialog>
@@ -241,6 +249,11 @@
     }
     &:active {
       transform: scale(0.9);
+    }
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
     }
     &.cancel {
       background-color: $rose;
