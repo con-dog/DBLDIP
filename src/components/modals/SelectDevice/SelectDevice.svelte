@@ -199,6 +199,9 @@
   }
 
   dialog {
+    &[open] {
+      position: fixed;
+    }
     width: 520px;
     position: absolute;
     top: 50%;
