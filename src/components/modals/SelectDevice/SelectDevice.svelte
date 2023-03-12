@@ -192,7 +192,6 @@
     &:checked {
       + div {
         outline: 3px solid $vivid-sky-blue;
-        font-weight: 700;
         border: 1px solid transparent;
       }
     }
