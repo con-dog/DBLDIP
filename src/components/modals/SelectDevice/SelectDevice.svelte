@@ -234,7 +234,7 @@
 
   .form-buttons {
     display: flex;
-    gap: 0.25rem;
+    gap: 0.5rem;
     justify-content: center;
   }
 
