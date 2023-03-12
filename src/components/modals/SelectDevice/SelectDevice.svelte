@@ -1,4 +1,6 @@
 <script lang ts>
+  import { createEventDispatcher } from 'svelte'
+
   import Fa from 'svelte-fa'
   import { faAndroid, faApple } from '@fortawesome/free-brands-svg-icons'
   import {
@@ -9,14 +11,22 @@
   import FrameIphone12 from '../../devices/phones/Iphone12/FrameIphone12.svelte'
 
   export let showModal
+
+  const dispatch = createEventDispatcher()
+
   let dialog
+  let form
+  let size = 'thumbnail'
 
   $: if (dialog && showModal) {
-    console.log('Here')
     dialog.showModal()
   }
 
-  let size = 'thumbnail'
+  function handleSubmit() {
+    dispatch('submit', {
+      form: form
+    })
+  }
 </script>
 
 <dialog
@@ -24,7 +34,11 @@
   on:close={() => (showModal = false)}
   on:click|self={() => dialog.close()}
 >
-  <form method="dialog">
+  <form
+    method="dialog"
+    on:submit|preventDefault={handleSubmit}
+    bind:this={form}
+  >
     <div class="head">
       <h1>Select devices to emulate</h1>
     </div>
@@ -34,8 +48,8 @@
           <Fa icon={faApple} />
           Apple smartphones</legend
         >
-        <label data-tooltip="390 x 844">
-          <input type="checkbox" />
+        <label for="iPhone12" data-tooltip="390 x 844">
+          <input type="checkbox" id="iPhone12" name="iPhone12" />
           <div>
             <span>iPhone 12</span>
             <FrameIphone12 {size} />
