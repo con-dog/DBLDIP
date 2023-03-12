@@ -7,7 +7,8 @@
   import ChromeFooter from './ChromeFooter.svelte'
   import HomeIndicator from './HomeIndicator.svelte'
 
-  let colorMode: 'lightMode' | 'darkMode' = 'darkMode'
+  // let colorMode: 'lightMode' | 'darkMode' = 'darkMode'
+  export let colorMode
   let size: 'thumbnail' | 'regular' = 'regular'
 </script>
 
