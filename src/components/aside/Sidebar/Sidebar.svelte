@@ -33,6 +33,8 @@
   $offwhite: #f3f3f3;
 
   aside {
+    z-index: 1;
+    background-color: $offwhite;
     position: fixed;
     top: calc(50% - 300px);
     left: 2rem;

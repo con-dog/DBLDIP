@@ -25,6 +25,7 @@
   $offwhite: #f3f3f3;
 
   button {
+    z-index: 1;
     position: fixed;
     bottom: 2rem;
     left: 2rem;
